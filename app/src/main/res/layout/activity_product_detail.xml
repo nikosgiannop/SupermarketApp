@@ -1,0 +1,110 @@
+<?xml version="1.0" encoding="utf-8"?>
+<ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="#FFFFFF">
+
+    <LinearLayout
+        android:orientation="vertical"
+        android:padding="16dp"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
+
+        <!-- Back Button -->
+        <Button
+            android:id="@+id/buttonBack"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@string/back_button"
+            android:backgroundTint="#DDDDDD"
+            android:textColor="#000000" />
+
+        <!-- Product Image -->
+        <ImageView
+            android:id="@+id/imageViewDetailProduct"
+            android:layout_width="match_parent"
+            android:layout_height="200dp"
+            android:layout_marginTop="8dp"
+            android:scaleType="centerCrop"
+            android:contentDescription="@string/product_image" />
+
+        <!-- Tag for Discount -->
+        <TextView
+            android:id="@+id/textViewDiscountTag"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:background="@drawable/discount_tag_background"
+            android:text="@string/label_offer"
+            android:textColor="#FFFFFF"
+            android:padding="4dp"
+            android:layout_marginTop="8dp"
+            android:visibility="gone" />
+
+        <!-- Product Name -->
+        <TextView
+            android:id="@+id/textViewDetailName"
+            android:textStyle="bold"
+            android:textSize="22sp"
+            android:layout_marginTop="12dp"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content" />
+
+        <!-- Description -->
+        <TextView
+            android:id="@+id/textViewDetailDescription"
+            android:textSize="16sp"
+            android:layout_marginTop="4dp"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content" />
+
+        <!-- Price -->
+        <TextView
+            android:id="@+id/textViewDetailPrice"
+            android:textSize="18sp"
+            android:textColor="#4CAF50"
+            android:layout_marginTop="12dp"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content" />
+
+        <!-- Nutrition -->
+        <TextView
+            android:id="@+id/textViewDetailNutrition"
+            android:textStyle="italic"
+            android:layout_marginTop="16dp"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content" />
+
+        <!-- Ingredients -->
+        <TextView
+            android:id="@+id/textViewDetailIngredients"
+            android:textStyle="italic"
+            android:layout_marginTop="8dp"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content" />
+
+        <TextView
+            android:id="@+id/textViewDetailAvailability"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:textAppearance="?attr/textAppearanceBody1"
+            android:layout_marginTop="8dp"
+            android:text="Διαθεσιμότητα: 0" />
+
+        <EditText
+            android:id="@+id/editTextQuantity"
+            android:layout_width="60dp"
+            android:layout_height="wrap_content"
+            android:inputType="number"
+            android:hint="1" />
+
+        <!-- Add to Cart Button -->
+        <Button
+            android:id="@+id/buttonAddToCart"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="24dp"
+            android:text="@string/add_to_cart_button"
+            android:backgroundTint="#FF9800"
+            android:textColor="#FFFFFF" />
+    </LinearLayout>
+</ScrollView>

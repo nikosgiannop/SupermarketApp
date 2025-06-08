@@ -1,0 +1,23 @@
+<resources>
+    <string name="app_name">SupermarkeApp</string>
+    <string name="catalogue_title">Κατάλογος supermarket</string>
+    <string name="product_image">Εικόνα προϊόντος</string>
+    <string name="back_button">Πίσω</string>
+    <string name="add_to_cart_button">Προσθήκη στο Καλάθι</string>
+    <string name="label_offer">ΠΡΟΣΦΟΡΑ</string>
+    <string name="invalid_quantity">Μη έγκυρη ποσότητα</string>
+    <string name="quantity_exceeds_stock">Η ποσότητα ξεπερνά το διαθέσιμο απόθεμα.</string>
+    <string name="product_load_error">Το προϊόν δεν φορτώθηκε σωστά</string>
+    <string name="added_to_cart">Προστέθηκε στο καλάθι!</string>
+    <string name="cart_title">Καλάθι</string>
+    <string name="total_cost">Συνολικό κόστος: 0 €</string>
+    <string name="checkout">Ολοκλήρωση παραγγελίας</string>
+    <string name="checkout_clicked">Έγινε κλικ στο Checkout</string>
+    <string name="total_cost_format">Σύνολο: %1$s €</string>
+    <string name="remove">Αφαίρεση</string>
+    <string name="purchase_completed">Αγορά ολοκληρώθηκε!</string>
+    <string name="history_title">Ιστορικό Αγορών</string>
+    <string name="no_orders_yet">Δεν υπάρχουν καταχωρήσεις.</string>
+    <string name="repeat_order">Επανάληψη</string>
+    <string name="order_repeated">Η παραγγελία προστέθηκε στο καλάθι</string>
+</resources>

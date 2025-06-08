@@ -1,0 +1,26 @@
+<resources>
+    <string name="app_name">SupermarkeApp</string>
+    <string name="catalogue_title">Supermarket Catalogue</string>
+    <string name="title_activity_product_detail_activity.kt">ProductDetailActivity.kt</string>
+    <string name="product_image">Product Image</string>
+    <string name="back_button">Back</string>
+    <string name="add_to_cart_button">Add to Cart</string>
+    <string name="label_offer">Offer</string>
+    <string name="invalid_quantity">Invalid quantity</string>
+    <string name="quantity_exceeds_stock">The quantity exceeds available stock.</string>
+    <string name="product_load_error">The product did not load correctly</string>
+    <string name="added_to_cart">Added to cart!</string>
+    <!-- Strings used for fragments for navigation -->
+
+    <string name="cart_title">Cart</string>
+    <string name="total_cost">Total Cost: 0 €</string>
+    <string name="checkout">Complete Order</string>
+    <string name="checkout_clicked">Checkout clicked</string>
+    <string name="total_cost_format">Total: %1$s €</string>
+    <string name="remove">Remove</string>
+    <string name="purchase_completed">Purchase completed!</string>
+    <string name="history_title">Order History</string>
+    <string name="no_orders_yet">No purchases yet.</string>
+    <string name="repeat_order">Repeat</string>
+    <string name="order_repeated">The order was added to basket</string>
+</resources>
