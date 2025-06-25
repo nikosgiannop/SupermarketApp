@@ -107,8 +107,10 @@
         android:layout_height="0dp"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.0"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/checkBoxOffer" />
+        app:layout_constraintTop_toBottomOf="@+id/checkBoxOffer"
+        app:layout_constraintVertical_bias="0.0" />
 
     <CheckBox
         android:id="@+id/checkBoxOffer"
@@ -133,11 +135,13 @@
 
     <Button
         android:id="@+id/buttonLanguage"
-        android:layout_width="105dp"
-        android:layout_height="47dp"
+        android:layout_width="60dp"
+        android:layout_height="30dp"
         android:layout_gravity="end"
         android:layout_margin="16dp"
+        android:padding="4dp"
         android:text="EN / EL"
+        android:textSize="10sp"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintStart_toStartOf="parent" />
 
