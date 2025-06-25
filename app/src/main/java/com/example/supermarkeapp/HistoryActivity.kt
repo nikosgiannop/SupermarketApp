@@ -39,24 +39,41 @@ class HistoryActivity : AppCompatActivity() {
                         intent.putExtra("orderId", order.id)
                         startActivity(intent)
                     },
-
                     //Αν κάνουμε κλικ στην επανάληψη κάνει προσθήκη των προιόντων παραγγελίας στο καλάθι
                     onRepeatClick = { order ->
-
                         CoroutineScope(Dispatchers.IO).launch {
                             val items = db.orderDao().getOrderItems(order.id)
+
+                            var allAvailable = true
+
                             //Για κάθε προϊόν της παραγγελίας, το βρίσκουμε στη βάση και το προσθέτουμε στο καλάθι
                             items.forEach { item ->
                                 val product = db.productDao().getProductById(item.productId)
                                 if (product != null) {
-                                    CartManager.addToCart(product, item.quantity)
+                                    if (product.availability <= 0) {
+                                        allAvailable = false
+                                        withContext(Dispatchers.Main) {
+                                            Toast.makeText(
+                                                this@HistoryActivity,
+                                                getString(R.string.out_of_stock, product.localizedName()),
+                                                Toast.LENGTH_SHORT
+                                            ).show()
+                                        }
+                                    } else {
+                                        CartManager.addToCart(product, item.quantity)
+                                    }
                                 }
                             }
-                            withContext(Dispatchers.Main) { //Μήνυμα επιβεβαίωσης στον χρήστη
-                                Toast.makeText(this@HistoryActivity, getString(R.string.order_repeated), Toast.LENGTH_SHORT).show()
+
+                            if (allAvailable) {
+                                withContext(Dispatchers.Main) {
+                                    Toast.makeText(this@HistoryActivity, getString(R.string.order_repeated), Toast.LENGTH_SHORT).show()
+                                }
                             }
                         }
                     }
+
+
                 )
                 recyclerView.adapter = adapter  //Ορισμός adapter στο RecyclerView
             }

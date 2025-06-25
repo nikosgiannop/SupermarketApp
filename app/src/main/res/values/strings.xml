@@ -8,6 +8,7 @@
     <string name="label_offer">Offer</string>
     <string name="invalid_quantity">Invalid quantity</string>
     <string name="quantity_exceeds_stock">The quantity exceeds available stock.</string>
+    <string name="out_of_stock">%1$s exceeds available stock.</string>
     <string name="product_load_error">The product did not load correctly</string>
     <string name="added_to_cart">Added to cart!</string>
     <!-- Strings used for fragments for navigation -->

@@ -7,6 +7,7 @@
     <string name="label_offer">ΠΡΟΣΦΟΡΑ</string>
     <string name="invalid_quantity">Μη έγκυρη ποσότητα</string>
     <string name="quantity_exceeds_stock">Η ποσότητα ξεπερνά το διαθέσιμο απόθεμα.</string>
+    <string name="out_of_stock">Το προϊόν %1$s ξεπερνά το διαθέσιμο απόθεμα.</string>
     <string name="product_load_error">Το προϊόν δεν φορτώθηκε σωστά</string>
     <string name="added_to_cart">Προστέθηκε στο καλάθι!</string>
     <string name="cart_title">Καλάθι</string>
