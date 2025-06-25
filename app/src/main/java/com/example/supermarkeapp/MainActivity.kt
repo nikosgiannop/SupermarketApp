@@ -40,6 +40,8 @@ class MainActivity : AppCompatActivity() {
 
         db = AppDatabase.getDatabase(this)  //Απόκτηση instance της βάσης δεδομένων
 
+        WishlistManager.init(db)
+
         //Φόρτωση των προϊόντων σε background thread
         CoroutineScope(Dispatchers.IO).launch {
             val products = db.productDao().getAll()
@@ -74,9 +76,10 @@ class MainActivity : AppCompatActivity() {
             val intent = Intent(this, CartActivity::class.java)
             startActivity(intent)
         }
-        findViewById<ImageButton>(R.id.buttonCheckout).setOnClickListener {
-            Toast.makeText(this, "Άνοιγμα Checkout", Toast.LENGTH_SHORT).show()
-            // TODO: Άνοιγμα CheckoutActivity
+
+        findViewById<ImageButton>(R.id.buttonWishlist).setOnClickListener {
+            val intent = Intent(this, WishlistActivity::class.java)
+            startActivity(intent)
         }
 
         //Μεταφορά στην οθόνη του ιστορικού αγορών
@@ -159,8 +162,9 @@ class MainActivity : AppCompatActivity() {
         }
     }
 
-    //Ελέγχει αν το προϊόν είναι διαθέσιμο (διαθέσιμες ποσότητες > 0)
+    //Ελέγχει αν το προιόν είναι διαθέσιμο (διαθέσιμες ποσότητες > 0)
     fun ProductEntity.matchesAvailability(required: Boolean): Boolean {
         return !required || availability > 0
     }
+
 }

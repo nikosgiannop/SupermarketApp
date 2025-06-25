@@ -37,11 +37,11 @@
             android:src="@drawable/shopping_cart" />
 
         <ImageButton
-            android:id="@+id/buttonCheckout"
+            android:id="@+id/buttonWishlist"
             android:layout_width="40dp"
             android:layout_height="40dp"
             android:background="?attr/selectableItemBackgroundBorderless"
-            android:src="@drawable/checkout" />
+            android:src="@drawable/wishlist" />
 
         <ImageButton
             android:id="@+id/buttonHistory"

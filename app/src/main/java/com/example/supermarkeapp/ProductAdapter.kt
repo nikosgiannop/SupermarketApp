@@ -9,6 +9,11 @@ import androidx.recyclerview.widget.RecyclerView
 import android.graphics.Paint
 import androidx.core.content.ContextCompat
 import android.content.Intent
+import android.widget.ImageButton
+import android.widget.Toast
+import kotlinx.coroutines.CoroutineScope
+import kotlinx.coroutines.Dispatchers
+import kotlinx.coroutines.launch
 
 //Adapter που συνδέει τη λίστα προιόντων με το RecyclerView
 class ProductAdapter(private var productList: List<ProductEntity>) :
@@ -26,6 +31,7 @@ class ProductAdapter(private var productList: List<ProductEntity>) :
         val textViewPrice: TextView = itemView.findViewById(R.id.textViewProductPrice)
         val imageViewProduct: ImageView = itemView.findViewById(R.id.imageViewProduct)
         val textViewAvailability: TextView = itemView.findViewById(R.id.textViewAvailability)
+        val buttonWishlistToggle: ImageButton = itemView.findViewById(R.id.buttonWishlistToggle)
     }
 
     //Δημιουργεί ένα νέο ViewHolder από το XML layout κάθε φορά που χρειάζεται νέα γραμμή στη λίστα
@@ -82,6 +88,31 @@ class ProductAdapter(private var productList: List<ProductEntity>) :
 
         //Εμφάνιση της localized διαθεσιμότητας
         holder.textViewAvailability.text = product.localizedAvailability()
+
+
+        //Εκτελεί ένα coroutine για να ελέγξει αν το προιόν είναι στη wishlist και ενημερώνει το icon
+        CoroutineScope(Dispatchers.Main).launch {
+            val isInWishlist = WishlistManager.isInWishlist(product.id)
+            holder.buttonWishlistToggle.setImageResource(
+                //Αν είναι στο wishlist, η καρδιά είναι γεμάτη, αλλιώς είναι κενή
+                if (isInWishlist) R.drawable.favorite else R.drawable.favorite_border
+            )
+        }
+
+        //Click listener καρδιάς (για λίστα επιθυμιών)
+        holder.buttonWishlistToggle.setOnClickListener {
+            CoroutineScope(Dispatchers.Main).launch {
+                if (WishlistManager.isInWishlist(product.id)) {
+                    WishlistManager.removeFromWishlist(product.id)
+                    holder.buttonWishlistToggle.setImageResource(R.drawable.favorite_border)
+                    Toast.makeText(holder.itemView.context, holder.itemView.context.getString(R.string.removed_from_wishlist), Toast.LENGTH_SHORT).show()
+                } else {
+                    WishlistManager.addToWishlist(product.id)
+                    holder.buttonWishlistToggle.setImageResource(R.drawable.favorite)
+                    Toast.makeText(holder.itemView.context, holder.itemView.context.getString(R.string.added_to_wishlist), Toast.LENGTH_SHORT).show()
+                }
+            }
+        }
     }
 
     override fun getItemCount(): Int = productList.size

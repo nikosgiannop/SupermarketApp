@@ -23,4 +23,9 @@
     <string name="no_orders_yet">No purchases yet.</string>
     <string name="repeat_order">Repeat</string>
     <string name="order_repeated">The order was added to basket</string>
+    <string name="wishlist_title">Wishlist</string>
+    <string name="clear_wishlist">Clear Wishlist</string>
+    <string name="wishlist_cleared">Wishlist cleared</string>
+    <string name="added_to_wishlist">Added to wishlist</string>
+    <string name="removed_from_wishlist">Removed from wishlist</string>
 </resources>

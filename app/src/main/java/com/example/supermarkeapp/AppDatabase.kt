@@ -10,10 +10,11 @@ import kotlinx.coroutines.launch
 
 //Ορισμός της βάσης δεδομένων Room για την εφαρμογή.
 //Περιλαμβάνει τις οντότητες ProductEntity, OrderEntity, OrderItemEntity
-@Database(entities = [ProductEntity::class,  OrderEntity::class, OrderItemEntity::class], version = 9)
+@Database(entities = [ProductEntity::class,  OrderEntity::class, OrderItemEntity::class,  WishlistEntity::class], version = 10)
 abstract class AppDatabase : RoomDatabase() {
     abstract fun orderDao(): OrderDao   //Παρέχει το DAO για τα προϊόντα
     abstract fun productDao(): ProductDao   //Παρέχει το DAO για τις παραγγελίες
+    abstract fun wishlistDao(): WishlistDao //Παρέχει το DAO για το wishlist
 
     companion object {
         @Volatile private var INSTANCE: AppDatabase? = null //Singleton instance της βάσης για αποφυγή πολλαπλών αρχικοποιήσεων

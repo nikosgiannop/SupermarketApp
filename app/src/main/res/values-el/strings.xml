@@ -20,4 +20,9 @@
     <string name="no_orders_yet">Δεν υπάρχουν καταχωρήσεις.</string>
     <string name="repeat_order">Επανάληψη</string>
     <string name="order_repeated">Η παραγγελία προστέθηκε στο καλάθι</string>
+    <string name="wishlist_title">Λίστα Επιθυμιών</string>
+    <string name="clear_wishlist">Εκκαθάριση Λίστας</string>
+    <string name="wishlist_cleared">Η λίστα εκκαθαρίστηκε</string>
+    <string name="added_to_wishlist">Προστέθηκε στη λίστα επιθυμιών</string>
+    <string name="removed_from_wishlist">Αφαιρέθηκε από τη λίστα επιθυμιών</string>
 </resources>

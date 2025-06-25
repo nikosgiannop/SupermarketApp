@@ -24,7 +24,7 @@ class CartActivity : AppCompatActivity() {
         //Αντιστοίχιση UI στοιχείων
         recyclerView = findViewById(R.id.recyclerViewCart)
         totalCostTextView = findViewById(R.id.textViewTotalCost)
-        buttonCheckout = findViewById(R.id.buttonCheckout)
+        buttonCheckout = findViewById(R.id.buttonWishlist)
 
         recyclerView.layoutManager = LinearLayoutManager(this)
 
