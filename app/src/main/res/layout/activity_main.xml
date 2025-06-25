@@ -31,21 +31,21 @@
 
         <ImageButton
             android:id="@+id/buttonCart"
-            android:layout_width="40dp"
+            android:layout_width="35dp"
             android:layout_height="40dp"
             android:background="?attr/selectableItemBackgroundBorderless"
             android:src="@drawable/shopping_cart" />
 
         <ImageButton
             android:id="@+id/buttonWishlist"
-            android:layout_width="40dp"
+            android:layout_width="35dp"
             android:layout_height="40dp"
             android:background="?attr/selectableItemBackgroundBorderless"
             android:src="@drawable/wishlist" />
 
         <ImageButton
             android:id="@+id/buttonHistory"
-            android:layout_width="wrap_content"
+            android:layout_width="35dp"
             android:layout_height="40dp"
             android:background="?attr/selectableItemBackgroundBorderless"
             android:src="@drawable/history" />
