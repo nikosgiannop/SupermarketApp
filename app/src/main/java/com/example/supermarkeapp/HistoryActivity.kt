@@ -8,6 +8,7 @@ import kotlinx.coroutines.*
 import java.util.*
 import android.content.Intent
 import android.widget.Toast
+import androidx.lifecycle.lifecycleScope
 
 class HistoryActivity : AppCompatActivity() {
 
@@ -15,6 +16,7 @@ class HistoryActivity : AppCompatActivity() {
     private lateinit var adapter: HistoryAdapter
 
     override fun onCreate(savedInstanceState: Bundle?) {
+
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_history)
 

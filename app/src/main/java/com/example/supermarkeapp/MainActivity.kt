@@ -1,5 +1,6 @@
 package com.example.supermarkeapp
 
+import android.app.Activity
 import android.content.Context
 import android.os.Bundle
 import android.widget.*
@@ -73,6 +74,7 @@ class MainActivity : AppCompatActivity() {
                 setupListeners()
             }
         }
+
         //Μεταφορά στην οθόνη του καλαθιού
         findViewById<ImageButton>(R.id.buttonCart).setOnClickListener {
             val intent = Intent(this, CartActivity::class.java)
@@ -179,12 +181,19 @@ class MainActivity : AppCompatActivity() {
         return !required || availability > 0
     }
 
+    //Function για αλλαγή locale γλώσσας μέσω κουμπιού
     private fun setLocale(context: Context, locale: Locale) {
         Locale.setDefault(locale)
         val resources = context.resources
-        val config: Configuration = resources.configuration
+        val config = Configuration(resources.configuration)
         config.setLocale(locale)
+        context.createConfigurationContext(config)
         resources.updateConfiguration(config, resources.displayMetrics)
+
+        //Η αλλαγή γλώσσας θα φανεί μετά από restart
+        if (context is Activity) {
+            context.recreate()
+        }
     }
 
 }
