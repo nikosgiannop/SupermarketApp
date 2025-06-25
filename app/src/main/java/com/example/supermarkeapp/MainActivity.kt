@@ -1,5 +1,6 @@
 package com.example.supermarkeapp
 
+import android.content.Context
 import android.os.Bundle
 import android.widget.*
 import androidx.appcompat.app.AppCompatActivity
@@ -9,6 +10,7 @@ import androidx.recyclerview.widget.RecyclerView
 import kotlinx.coroutines.*
 import java.util.*
 import android.content.Intent
+import android.content.res.Configuration
 
 class MainActivity : AppCompatActivity() {
 
@@ -86,6 +88,16 @@ class MainActivity : AppCompatActivity() {
         findViewById<ImageButton>(R.id.buttonHistory).setOnClickListener {
             val intent = Intent(this, HistoryActivity::class.java)
             startActivity(intent)
+        }
+
+        val buttonLanguage = findViewById<Button>(R.id.buttonLanguage)
+
+        //Listener για κουμπί αλλαγής γλώσσας
+        buttonLanguage.setOnClickListener {
+            val currentLang = Locale.getDefault().language
+            val newLocale = if (currentLang == "el") Locale("en") else Locale("el")
+            setLocale(this, newLocale)
+            recreate() //Επανεκκινεί το activity για να εφαρμοστεί η νέα γλώσσα
         }
     }
 
@@ -165,6 +177,14 @@ class MainActivity : AppCompatActivity() {
     //Ελέγχει αν το προιόν είναι διαθέσιμο (διαθέσιμες ποσότητες > 0)
     fun ProductEntity.matchesAvailability(required: Boolean): Boolean {
         return !required || availability > 0
+    }
+
+    private fun setLocale(context: Context, locale: Locale) {
+        Locale.setDefault(locale)
+        val resources = context.resources
+        val config: Configuration = resources.configuration
+        config.setLocale(locale)
+        resources.updateConfiguration(config, resources.displayMetrics)
     }
 
 }
